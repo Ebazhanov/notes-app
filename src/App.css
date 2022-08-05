@@ -6,7 +6,7 @@ body,
   height: 100vh;
   overflow: hidden;
   font-size: 16px;
-  background: url(https://images.unsplash.com/photo-1604147706283-d7119b5b822c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+  background: white;
 }
 
 .App {
