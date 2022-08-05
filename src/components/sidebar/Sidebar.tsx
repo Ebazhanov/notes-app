@@ -14,9 +14,10 @@ import {
 interface Props {
   notes: any;
   onAddNote: any;
+  onDeleteNote: (id: string) => void;
 }
 
-const Sidebar = ({ notes, onAddNote }: Props) => {
+const Sidebar = ({ notes, onAddNote, onDeleteNote }: Props) => {
   return (
     <AppSidebar>
       <Header>
@@ -24,12 +25,14 @@ const Sidebar = ({ notes, onAddNote }: Props) => {
         <AddButton onClick={onAddNote}>Add</AddButton>
       </Header>
       <Notes>
-        <Note>
+        <>
           {notes.map((note: any) => (
-            <>
+            <Note>
               <SideBarNoteTitle>
                 <strong>{note.title}</strong>
-                <DeleteButton>Delete</DeleteButton>
+                <DeleteButton onClick={() => onDeleteNote(note.id)}>
+                  Delete
+                </DeleteButton>
               </SideBarNoteTitle>
               <NoteBody>
                 {note.body && note.body.substring(0, 100) + "..."}
@@ -41,9 +44,9 @@ const Sidebar = ({ notes, onAddNote }: Props) => {
                   minute: "2-digit",
                 })}
               </NoteMeta>
-            </>
+            </Note>
           ))}
-        </Note>
+        </>
       </Notes>
     </AppSidebar>
   );

@@ -2,5 +2,7 @@
 
 - [x] Styled component
 - [x] Typescript
-- [x] use `react-use-uuid` for ....
-- [ ] responsive design (mobile, tablet)
+- [x] use `uuidv4` library to get uniq id
+- [ ] responsive design (mobile, tablet) ???
+
+in PROGRESS

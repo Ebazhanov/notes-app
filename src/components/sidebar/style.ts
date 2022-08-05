@@ -23,7 +23,7 @@ export const Notes = styled.div`
 `;
 
 export const Note = styled.div`
-  padding: 25px;
+  padding: 20px;
   cursor: pointer;
 `;
 
