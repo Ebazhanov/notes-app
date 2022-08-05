@@ -9,20 +9,28 @@ import {
   DeleteButton,
   Title,
 } from "./style";
+import { ReactNode } from "react";
 
-const Sidebar = () => {
+interface Props {
+  notes: any;
+  onAddNote: any;
+}
+
+const Sidebar = ({ notes, onAddNote }: Props) => {
   return (
     <AppSidebar>
       <Header>
         <Title>Notes</Title>
-        <AddButton>Add</AddButton>
+        <AddButton onClick={onAddNote}>Add</AddButton>
       </Header>
       <Notes>
         <Note>
-          <SideBarNoteTitle>
-            <strong>Title</strong>
-            <DeleteButton>Delete</DeleteButton>
-          </SideBarNoteTitle>
+          {notes.map((note: any) => (
+            <SideBarNoteTitle>
+              <strong>Title</strong>
+              <DeleteButton>Delete</DeleteButton>
+            </SideBarNoteTitle>
+          ))}
           <p>Note preview</p>
           <NoteMeta>Last Modified [data]</NoteMeta>
         </Note>
