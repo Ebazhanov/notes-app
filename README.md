@@ -6,3 +6,4 @@
 - [ ] responsive design (mobile, tablet) ???
 
 in PROGRESS
+- [ ] Add Edit functionality
