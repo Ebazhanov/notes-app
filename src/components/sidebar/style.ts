@@ -27,3 +27,8 @@ export const SideBarNoteTitle = styled.div`
   display: flex;
   justify-content: space-between;
 `;
+
+export const NoteMeta = styled.small`
+  display: block;
+  color: #999;
+`;

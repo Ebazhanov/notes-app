@@ -1,4 +1,11 @@
-import { AppSidebar, Header, Note, Notes, SideBarNoteTitle } from "./style";
+import {
+  AppSidebar,
+  Header,
+  Note,
+  NoteMeta,
+  Notes,
+  SideBarNoteTitle,
+} from "./style";
 
 const Sidebar = () => {
   return (
@@ -14,6 +21,7 @@ const Sidebar = () => {
             <button>Delete</button>
           </SideBarNoteTitle>
           <p>Note preview</p>
+          <NoteMeta>Last Modified [data]</NoteMeta>
         </Note>
       </Notes>
     </AppSidebar>
