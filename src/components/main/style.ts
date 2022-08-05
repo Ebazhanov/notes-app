@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const AppNote = styled.div`
   width: 70%;
   height: 100vh;
+  margin-right: 25px;
 `;
 
 export const AppNoteEdit = styled.div`

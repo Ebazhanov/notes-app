@@ -5,20 +5,23 @@ import {
   NoteMeta,
   Notes,
   SideBarNoteTitle,
+  AddButton,
+  DeleteButton,
+  Title,
 } from "./style";
 
 const Sidebar = () => {
   return (
     <AppSidebar>
       <Header>
-        <h1>Sidebar</h1>
-        <button>Add</button>
+        <Title>Notes</Title>
+        <AddButton>Add</AddButton>
       </Header>
       <Notes>
         <Note>
           <SideBarNoteTitle>
             <strong>Title</strong>
-            <button>Delete</button>
+            <DeleteButton>Delete</DeleteButton>
           </SideBarNoteTitle>
           <p>Note preview</p>
           <NoteMeta>Last Modified [data]</NoteMeta>
