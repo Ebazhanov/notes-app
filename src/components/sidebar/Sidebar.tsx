@@ -1,15 +1,15 @@
 import {
+  AddButton,
   AppSidebar,
+  DeleteButton,
   Header,
   Note,
+  NoteBody,
   NoteMeta,
   Notes,
   SideBarNoteTitle,
-  AddButton,
-  DeleteButton,
   Title,
 } from "./style";
-import { ReactNode } from "react";
 
 interface Props {
   notes: any;
@@ -26,13 +26,23 @@ const Sidebar = ({ notes, onAddNote }: Props) => {
       <Notes>
         <Note>
           {notes.map((note: any) => (
-            <SideBarNoteTitle>
-              <strong>Title</strong>
-              <DeleteButton>Delete</DeleteButton>
-            </SideBarNoteTitle>
+            <>
+              <SideBarNoteTitle>
+                <strong>{note.title}</strong>
+                <DeleteButton>Delete</DeleteButton>
+              </SideBarNoteTitle>
+              <NoteBody>
+                {note.body && note.body.substring(0, 100) + "..."}
+              </NoteBody>
+              <NoteMeta>
+                Last modified{" "}
+                {new Date(note.lastModified).toLocaleDateString("en-GB", {
+                  hour: "2-digit",
+                  minute: "2-digit",
+                })}
+              </NoteMeta>
+            </>
           ))}
-          <p>Note preview</p>
-          <NoteMeta>Last Modified [data]</NoteMeta>
         </Note>
       </Notes>
     </AppSidebar>

@@ -64,3 +64,7 @@ export const DeleteButton = styled.button`
     color: #04c;
   }
 `;
+
+export const NoteBody = styled.p`
+  margin: 10px 0;
+`;
