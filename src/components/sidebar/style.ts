@@ -25,6 +25,13 @@ export const Notes = styled.div`
 export const Note = styled.div`
   padding: 20px;
   cursor: pointer;
+  &.active {
+    background: #08c;
+    color: white;
+  }
+  &.notActive:hover {
+    background: #ddd;
+  }
 `;
 
 export const SideBarNoteTitle = styled.div`

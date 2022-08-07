@@ -6,6 +6,7 @@ import GlobalStyle from "./theme/globalStyles";
 
 function App() {
   const [notes, setNotes] = useState<any[]>([]);
+  const [activeNote, setActiveNote] = useState(false);
 
   const onAddNote = () => {
     const newNote = {
@@ -28,6 +29,8 @@ function App() {
         notes={notes}
         onAddNote={onAddNote}
         onDeleteNote={onDeleteNote}
+        activeNote={activeNote}
+        setActiveNote={setActiveNote}
       />
       <Main />
     </div>

@@ -13,11 +13,19 @@ import {
 
 interface Props {
   notes: any;
+  activeNote: boolean;
+  setActiveNote: any;
   onAddNote: any;
   onDeleteNote: (id: string) => void;
 }
 
-const Sidebar = ({ notes, onAddNote, onDeleteNote }: Props) => {
+const Sidebar = ({
+  notes,
+  onAddNote,
+  onDeleteNote,
+  activeNote,
+  setActiveNote,
+}: Props) => {
   return (
     <AppSidebar>
       <Header>
@@ -27,7 +35,10 @@ const Sidebar = ({ notes, onAddNote, onDeleteNote }: Props) => {
       <Notes>
         <>
           {notes.map((note: any) => (
-            <Note>
+            <Note
+              className={note.id === activeNote ? "active" : "notActive"}
+              onClick={() => setActiveNote(note.id)}
+            >
               <SideBarNoteTitle>
                 <strong>{note.title}</strong>
                 <DeleteButton onClick={() => onDeleteNote(note.id)}>
