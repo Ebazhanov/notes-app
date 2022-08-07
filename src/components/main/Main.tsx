@@ -8,16 +8,30 @@ import {
   NotePreviewTitle,
 } from "./style";
 
-export default function Main() {
+interface Props {
+  activeNote: any;
+}
+
+export default function Main({ activeNote }: Props) {
+  //console.log("activeNote.title", activeNote.title);
   return (
     <AppNote>
       <AppNoteEdit>
-        <EditInputField type="text" id="title" autoFocus />
-        <EditTextArea id="body" placeholder="Write your note here..." />
+        <EditInputField
+          type="text"
+          id="title"
+          /*value={activeNote.title}*/
+          autoFocus
+        />
+        <EditTextArea
+          id="body"
+          placeholder="Write your note here..."
+          /*value={activeNote.body}*/
+        />
       </AppNoteEdit>
       <AppNotePreview>
-        <NotePreviewTitle>TITLE</NotePreviewTitle>
-        <MarkdownPreview>note preview</MarkdownPreview>
+        <NotePreviewTitle>Title</NotePreviewTitle>
+        <MarkdownPreview>Body</MarkdownPreview>
       </AppNotePreview>
     </AppNote>
   );

@@ -22,6 +22,11 @@ function App() {
     setNotes(notes.filter((note) => note.id !== idToDelete));
   };
 
+  const getActiveNote = () => {
+    //console.log({ notes });
+    return notes.find((note) => note.id !== activeNote);
+  };
+
   return (
     <div className="App">
       <GlobalStyle />
@@ -32,7 +37,7 @@ function App() {
         activeNote={activeNote}
         setActiveNote={setActiveNote}
       />
-      <Main />
+      <Main activeNote={getActiveNote()} />
     </div>
   );
 }

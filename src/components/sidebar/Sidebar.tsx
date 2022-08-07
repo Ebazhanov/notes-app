@@ -48,7 +48,9 @@ const Sidebar = ({
               <NoteBody>
                 {note.body && note.body.substring(0, 100) + "..."}
               </NoteBody>
-              <NoteMeta>
+              <NoteMeta
+                className={note.id === activeNote ? "active" : "notActive"}
+              >
                 Last modified{" "}
                 {new Date(note.lastModified).toLocaleDateString("en-GB", {
                   hour: "2-digit",

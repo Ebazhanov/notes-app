@@ -42,6 +42,10 @@ export const SideBarNoteTitle = styled.div`
 export const NoteMeta = styled.small`
   display: block;
   color: #999;
+  &.active {
+    background: #08c;
+    color: white;
+  }
 `;
 
 export const AddButton = styled.button`

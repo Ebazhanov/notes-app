@@ -13,7 +13,7 @@ export const AppNoteEdit = styled.div`
 
 export const AppNotePreview = styled.div`
   height: 50vh;
-  background: lightyellow;
+  background: rgba(0, 0, 0, 0.02);
 `;
 
 export const NotePreviewTitle = styled.h1`
