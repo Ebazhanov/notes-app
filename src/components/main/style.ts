@@ -50,3 +50,12 @@ export const EditInputField = styled.input`
   resize: none;
   font-family: inherit;
 `;
+
+export const NoActiveNote = styled.div`
+  width: 70%;
+  height: 100vh;
+  line-height: 100vh;
+  text-align: center;
+  font-size: 2rem;
+  color: #999;
+`;
