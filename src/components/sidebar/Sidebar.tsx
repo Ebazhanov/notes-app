@@ -26,6 +26,10 @@ const Sidebar = ({
   activeNote,
   setActiveNote,
 }: Props) => {
+  const sortedNotes = notes.sort(
+    (a: any, b: any) => b.lastModified - a.lastModified
+  );
+
   return (
     <AppSidebar>
       <Header>
@@ -34,7 +38,7 @@ const Sidebar = ({
       </Header>
       <Notes>
         <>
-          {notes.map((note: any) => (
+          {sortedNotes.map((note: any) => (
             <Note
               className={note.id === activeNote ? "active" : "notActive"}
               onClick={() => setActiveNote(note.id)}

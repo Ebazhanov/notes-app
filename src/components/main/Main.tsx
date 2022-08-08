@@ -8,6 +8,7 @@ import {
   NoActiveNote,
   NotePreviewTitle,
 } from "./style";
+import ReactMarkdown from "react-markdown";
 
 interface Props {
   activeNote: any;
@@ -18,12 +19,14 @@ export default function Main({ activeNote, onUpdateNote }: Props) {
   const onEditField = (key: any, value: any) => {
     onUpdateNote({
       id: activeNote.id,
-      [key]: value,
+      //...activeNote,
+      title: value,
+      body: value,
       lastModified: Date.now(),
     });
   };
 
-  if (!activeNote) return <NoActiveNote>No Active Note</NoActiveNote>;
+  if (!activeNote) return <NoActiveNote>No note selected</NoActiveNote>;
 
   return activeNote ? (
     <AppNote>
@@ -45,7 +48,9 @@ export default function Main({ activeNote, onUpdateNote }: Props) {
       </AppNoteEdit>
       <AppNotePreview>
         <NotePreviewTitle>{activeNote.title}</NotePreviewTitle>
-        <MarkdownPreview>{activeNote.body}</MarkdownPreview>
+        <MarkdownPreview>
+          <ReactMarkdown>{activeNote.body}</ReactMarkdown>
+        </MarkdownPreview>
       </AppNotePreview>
     </AppNote>
   ) : null;
