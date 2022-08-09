@@ -18,10 +18,8 @@ interface Props {
 export default function Main({ activeNote, onUpdateNote }: Props) {
   const onEditField = (key: any, value: any) => {
     onUpdateNote({
-      id: activeNote.id,
-      //...activeNote,
-      title: value,
-      body: value,
+      ...activeNote,
+      [key]: value,
       lastModified: Date.now(),
     });
   };
@@ -43,7 +41,7 @@ export default function Main({ activeNote, onUpdateNote }: Props) {
           id="body"
           placeholder="Write your note here..."
           value={activeNote.body}
-          onChange={(event) => onEditField("title", event.target.value)}
+          onChange={(event) => onEditField("body", event.target.value)}
         />
       </AppNoteEdit>
       <AppNotePreview>
