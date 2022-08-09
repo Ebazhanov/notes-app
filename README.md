@@ -17,7 +17,10 @@
 - Edit Note
   - sort updated Note to the top
 - delete Notes
+- store Notes in localStorage (to keep them after refreshing the browser)
 
 # Nice to have
 
 - responsive design (mobile, tablet)
+
+![gif](notes-app.gif)

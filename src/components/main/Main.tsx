@@ -12,11 +12,11 @@ import ReactMarkdown from "react-markdown";
 
 interface Props {
   activeNote: any;
-  onUpdateNote: any;
+  onUpdateNote: (value: string) => void;
 }
 
 export default function Main({ activeNote, onUpdateNote }: Props) {
-  const onEditField = (key: any, value: any) => {
+  const onEditField = (key: string, value: string) => {
     onUpdateNote({
       ...activeNote,
       [key]: value,

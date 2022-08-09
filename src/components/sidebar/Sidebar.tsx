@@ -12,7 +12,7 @@ import {
 } from "./style";
 
 interface Props {
-  notes: any;
+  notes: string[];
   activeNote: boolean;
   setActiveNote: any;
   onAddNote: any;
@@ -50,7 +50,7 @@ const Sidebar = ({
                 </DeleteButton>
               </SideBarNoteTitle>
               <NoteBody>
-                {note.body && note.body.substring(0, 100) + "..."}
+                {note.body && note.body.substring(0, 20) + "..."}
               </NoteBody>
               <NoteMeta
                 className={note.id === activeNote ? "active" : "notActive"}
