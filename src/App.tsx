@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import Sidebar from "./components/sidebar/Sidebar";
 import Main from "./components/main/Main";
-import { v4 as uuid } from "uuid";
+import { nanoid } from "nanoid";
 import GlobalStyle from "./theme/globalStyles";
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
 
   const onAddNote = () => {
     const newNote = {
-      id: uuid(),
+      id: nanoid(),
       title: "Untitled Note",
       body: "",
       lastModified: Date.now(),
